@@ -1,0 +1,54 @@
+* {
+    padding: 0;
+    margin: 0;
+    background-color: azure;
+}
+
+.container{
+    display: flex;
+    text-align: center;
+    flex-direction: column;
+    align-items: center;
+    margin: 15px;
+}
+.container h1 {
+    color: rgb(77, 147, 190);
+}
+.insertTask{
+    display: flex;
+    align-items: center;
+    padding: 10px;
+}
+#newTask {
+    margin: 5px;
+    height: 25px;
+    border: 1px solid rgb(105, 197, 255);
+    background-color: rgb(227, 248, 255);
+    color: rgb(105, 197, 255);
+    border-radius: 5px;
+    text-align: center
+}
+#newTask::placeholder {
+    color: rgb(77, 147, 190);
+}
+#buttonNewTask {
+    border-radius: 5px;
+    height: 25px;
+    background-color: rgb(227, 248, 255);
+    color: rgb(77, 147, 190);
+    padding: 5px;
+    border-radius: 5px;
+    border: 1px solid rgb(88, 166, 214);
+}
+.list {
+    display: flex;
+    flex-direction: column;
+}
+
+.item {
+    display: flex;
+    align-items: center;
+}
+.item input {
+    margin-right: 5px;
+}

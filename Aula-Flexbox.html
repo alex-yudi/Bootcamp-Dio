@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fundamentos</title>
+    <style>
+        .flex {
+            width: 500px;
+            height: 500px;
+            padding: 10px;
+            border: 2px solid black;
+            display:flex; /* Parte importante, sem ele não existe o flexbox */
+            flex-direction: row; /* pode ser column, column-reverse, row, row reverse. Por padrão ele é feito em row */
+            flex-wrap: wrap-reverse; /* pode ser wrap, nowrap, wrap-reverse. Comando responsável por ter quebra ou não de linha/coluna na flexbox, por padrão é wrap; o wrap-reverse faz a quebra de maneira que os itens que ficariam abaixo ou do lado por serem os últimos, ficarem no lugar do que seria os primeiros. */
+            flex-flow: row-reverse wrap; /* Propriedade que posso selecionar o flex-direction e o flex-wrap em uma única linha, economiza código, caso eu deseje selecionar cada um deles na flex-box. */
+            justify-content: center; /* Pode ser center, flex-start, flex-end, space-around ou space-between. Por padrão os itens usam o flex-start. Com essa propriedade posso designar como os meus itens serão distribuídos dentro do flex-box. Essa orientação sempre vai seguir a orientação da direção que a flex-box está seguindo. */
+            align-items: center;/* Por padrão é o stretch. Pode ser stretch, center, flex-start, flex-end, baseline. Trata-se de forma que os items serão alinhados na orientação que a flex-box está seguindo, devo imagina uma linha imaginária, na qual os itens ficarão alinhados nela conforme o comando escolhido */;
+            align-content: flex-start; /* Trata-se de como os elementos serão alinhados no sentido contrário da orientação adotada pela flex-box. Devo imaginar que seria a forma que a fila dos items que estou usando serão encaixadas, se mais próximas do fim da orientação, mais próxima do início etc.  */
+        }
+        .item {
+            background-color: aqua;
+            margin: 1px;
+            padding: 7px;
+            width: 100px;
+            height: 100px;
+        }
+
+        /* As propriedades abaixo são utilizadas em cada um dos items dentro da flex-box. No exemplo que uso aqui nesse arquivo, eu deveria colocar cada uma delas em cada bloco com o texto "item x" */
+        .flex-grow { 
+            flex-grow: 0; /* propriedade responsável por determinar a proporção de crescimento de cada item que está sendo utilizado dentro da flex-box. Se o justify-content estiver sendo utilizado, ele para de funcionar, com o flex-grow ativo. Eu adiciono o flex-grow em cada item, por padrão é aplicado o 0, conforme eu aumente o número, a proporção daquele determinado item vai crescer conforme a proporção escolhida. */
+        }
+        .flex-basis {
+            flex-basis: 1; /* Por padrão é o auto. Ele serve para calcular o tamanho base e a forma que o conteúdo preencherá o item. Por exemplo, o texto dentro de uma div será calculado de forma que preencha o espaço da div conforme o valor escolhido para o flex-basis. */
+        }
+        .flex-shrink {
+            flex-shrink: 1; /* Defino o quanto o meu item pode ser reduzido, selecionando o 0, ele não reduzirá, selecionando o 2, ele pode reduzir até pela metado e continua na lógica do inversamente proporcional. */
+        }
+        .flex-items {
+            flex: 1 0 auto; /* É a junção do grow, shrink e do basis em uma única linha. POr ordem, vai ser o grow, dps o shrink e por fim o basis. */ 
+        }
+        .order {
+            order: 1; /* Propriedade que serve para eu alterar a ordem que os elementos serão ordenados. OBRIGATORIAMENTE preciso que cada item tenha o seu order definido, pois do contrário não há como ordenar, já que é um comando que sempre será interpretado de forma relativa aos outros orders já colocados nos itens. */
+        }
+        .align-self {
+            align-self: flex-start; /* Trata-se da propriedade para fazer o alinhamento de um único item, caso haja algum align-items ativo, o align-self irá sobrepor ele, somente para o item designado. Pode ser usado o auto(padrão do itens), flex-start, flex-end, center, stretch, baseline. */
+        }
+
+    </style>
+</head>
+<body>
+    <div class="flex">
+        <div class="item">item 1</div>
+        <div class="item">item 2</div>
+        <div class="item">item 3</div>
+        <div class="item">item 4</div>
+        <div class="item">item 5</div>
+        <div class="item">item 6</div>
+        <div class="item">item 7</div>
+        <div class="item">item 8</div>
+        <div class="item">item 9</div>
+        <div class="item">item 10</div>
+    </div>
+    
+</body>
+</html>
